@@ -23,33 +23,23 @@
     <!-- Header -->
     <header class="site-header">
       <div class="container">
-        <div class="row site-header__row">
-          <a class="brand col-3 tablet-3 mobile-5" href="#top" aria-label="Typegrid, back to top">
+        <div class="row">
+          <a class="brand col-4 tablet-4 mobile-6" href="#top" aria-label="Typegrid, back to top">
             <svg class="brand__mark" viewBox="0 0 11 11" shape-rendering="crispEdges" aria-hidden="true">
               <path fill="#10decd" d="M0 0h11v4H4v3H0z" />
               <path fill="#ee4432" d="M11 4v7H0V7h7V4z" />
             </svg>
             <span>Typegrid</span>
           </a>
-          <nav class="nav col-6 tablet-6 hide-mobile" aria-label="Sections">
-            <a href="#start">Start</a>
-            <a href="#playground">Playground</a>
-            <a href="#ranges">Ranges</a>
-            <a href="#documentation">Docs</a>
-            <a href="#about">About</a>
-          </nav>
-          <div class="site-header__actions col-3 tablet-3 mobile-7">
-            <button
-              class="toggle"
-              type="button"
-              data-action="overlay"
-              aria-pressed="false"
-              title="Show the grid (G)"
-            >
-              Grid
-            </button>
+          <nav class="nav col-8 tablet-8 mobile-6" aria-label="Sections">
+            <a class="hide-mobile" href="#start">Start</a>
+            <a class="hide-mobile" href="#playground">Playground</a>
+            <a class="hide-mobile hide-tablet" href="#ranges">Ranges</a>
+            <a class="hide-mobile" href="#documentation">Docs</a>
+            <a class="hide-mobile hide-tablet" href="#about">About</a>
+            <button type="button" data-action="overlay" aria-pressed="false" title="Show the grid (G)">Grid</button>
             <a href="./typegrid.css" download="typegrid.css">Download&nbsp;↓</a>
-          </div>
+          </nav>
         </div>
       </div>
     </header>
@@ -68,32 +58,30 @@
             <div class="poster__bars" aria-hidden="true"></div>
           </div>
 
-          <div class="row hero__intro">
-            <dl class="spec col-3 tablet-4">
-              <div>
+          <div class="row columns">
+            <div class="col-4">
+              <h2>Set up your grid within minutes.</h2>
+              <p>Agile grid system for designers &amp; developers. Easy setup, update on the fly.</p>
+            </div>
+            <dl class="col-4">
+              <div class="pair">
                 <dt>Version</dt>
                 <dd>1.0 (Beta)</dd>
               </div>
-              <div>
+              <div class="pair">
                 <dt>Columns</dt>
                 <dd>12</dd>
               </div>
-              <div>
+              <div class="pair">
                 <dt>Size</dt>
                 <dd>909 B gzipped</dd>
               </div>
-              <div>
+              <div class="pair">
                 <dt>Since</dt>
                 <dd>2013</dd>
               </div>
             </dl>
-            <div class="col-6 tablet-8">
-              <p class="headline">Set up your grid within minutes.</p>
-              <p class="hero__text">
-                Agile grid system for designers &amp; developers. Easy setup, update on the fly.
-              </p>
-            </div>
-            <p class="hero__actions col-3 tablet-12">
+            <p class="links col-4">
               <a href="#documentation">Documentation <span aria-hidden="true">→</span></a>
               <a href="./typegrid.css" download="typegrid.css">Download (Beta) <span aria-hidden="true">↓</span></a>
             </p>
@@ -101,121 +89,122 @@
         </div>
       </section>
 
-      <!-- 01 Start -->
+      <!-- Get started -->
       <section class="section" id="start">
         <div class="container">
-          <div class="row step">
-            <h2 class="section__label col-3">Get started</h2>
-            <p class="headline col-3">Ready</p>
-            <div class="step__body col-6">
-              <h3>Include files</h3>
-              <p>
-                Typegrid runs on plain CSS. Include typegrid.css, one file under 1KB gzipped, ahead of your own
-                styles.
-              </p>
-              <div class="code" data-lang="html">
-                <pre><code>&lt;!-- typegrid.css --&gt;
+          <div class="row columns">
+            <div class="col-4">
+              <h2>Ready, set, go.</h2>
+              <p>Three steps from a blank page to a working grid.</p>
+            </div>
+
+            <div class="col-8">
+              <article class="pair pair--stack step">
+                <div>
+                  <h3>Ready</h3>
+                  <p>
+                    Include files. Typegrid runs on plain CSS. Include typegrid.css, one file under 1KB
+                    gzipped, ahead of your own styles.
+                  </p>
+                </div>
+                <div class="code" data-lang="html">
+                  <pre><code>&lt;!-- typegrid.css --&gt;
 &lt;link rel="stylesheet"
-      href="css/typegrid.css"&gt;
+  href="css/typegrid.css"&gt;
 
 &lt;!-- your styles --&gt;
 &lt;link rel="stylesheet"
-      href="css/site.css"&gt;</code></pre>
-              </div>
-            </div>
-          </div>
+  href="css/site.css"&gt;</code></pre>
+                </div>
+              </article>
 
-          <div class="row step">
-            <p class="headline col-3 from-4">Set</p>
-            <div class="step__body col-6">
-              <h3>Change options</h3>
-              <p>There are only four custom properties you need to change.</p>
-              <div class="code" data-lang="css">
-                <pre><code>/* Desktop - Default */
+              <article class="pair pair--stack step">
+                <div>
+                  <h3>Set</h3>
+                  <p>Change options. There are only four custom properties you need to change.</p>
+                </div>
+                <div class="code" data-lang="css">
+                  <pre><code>/* Desktop - Default */
 --column-width: 40;
 --columns: 12;
 --gutter-width: 40;
 
 /* Widescreen */
 --column-width-widescreen: 60;</code></pre>
-              </div>
-            </div>
-          </div>
+                </div>
+              </article>
 
-          <div class="row step">
-            <p class="headline col-3 from-4">Go</p>
-            <div class="step__body col-6">
-              <h3>Start coding</h3>
-              <p>
-                You're ready to dive into coding. There is nothing to compile before going live: the browser
-                does the math, so every change shows up on the next refresh. For advanced options and other
-                questions, please refer to the <a href="#documentation">documentation</a> below.
-              </p>
+              <article class="pair pair--stack step">
+                <div>
+                  <h3>Go</h3>
+                  <p>
+                    Start coding. There is nothing to compile before going live: the browser does the math,
+                    so every change shows up on the next refresh. For advanced options and other questions,
+                    please refer to the <a href="#documentation">documentation</a> below.
+                  </p>
+                </div>
+              </article>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- 02 Playground -->
+      <!-- Playground -->
       <section class="section" id="playground">
         <div class="container">
-          <div class="row section__head">
-            <h2 class="section__label col-3">Playground</h2>
-            <div class="col-9">
-              <p class="headline">Update on the fly.</p>
-              <p class="section__lead">
+          <div class="row columns">
+            <div class="col-4">
+              <h2>Update on the fly.</h2>
+              <p>
                 Four numbers describe the whole grid. Drag them and watch the columns, the container and the
                 code follow.
               </p>
+              <form class="controls" aria-label="Grid options">
+                <label class="control">
+                  <span class="control__label"><code>--column-width</code><output data-out="cw">40</output></span>
+                  <input type="range" name="cw" min="20" max="80" step="2" value="40" />
+                </label>
+                <label class="control">
+                  <span class="control__label"><code>--columns</code><output data-out="n">12</output></span>
+                  <input type="range" name="n" min="2" max="16" step="1" value="12" />
+                </label>
+                <label class="control">
+                  <span class="control__label"><code>--gutter-width</code><output data-out="gw">40</output></span>
+                  <input type="range" name="gw" min="0" max="60" step="2" value="40" />
+                </label>
+                <label class="control">
+                  <span class="control__label"
+                    ><code>--column-width-widescreen</code><output data-out="cww">60</output></span
+                  >
+                  <input type="range" name="cww" min="20" max="100" step="2" value="60" />
+                </label>
+                <button type="reset">Reset ↺</button>
+              </form>
             </div>
-          </div>
 
-          <div class="row gauge" data-preview="desktop">
-            <div class="gauge__read col-3 from-4 tablet-4">
-              <p class="gauge__label">Desktop</p>
-              <p class="gauge__figure"><span class="headline" data-out="desktop-width">960</span> px</p>
-              <p class="gauge__math" data-out="desktop-math">12 × (40 + 40)</p>
-            </div>
-            <div class="gauge__track col-6 tablet-8">
-              <div class="gauge__grid" aria-hidden="true"></div>
-            </div>
-          </div>
+            <div class="col-8">
+              <div class="gauge" data-preview="desktop">
+                <p class="pair">
+                  <span>Desktop</span>
+                  <span
+                    ><span data-out="desktop-width">960px</span
+                    ><span class="hide-mobile"> = <span data-out="desktop-math">12 × (40 + 40)</span></span></span
+                  >
+                </p>
+                <div class="gauge__grid" aria-hidden="true"></div>
+              </div>
 
-          <div class="row gauge" data-preview="widescreen">
-            <div class="gauge__read col-3 from-4 tablet-4">
-              <p class="gauge__label">Widescreen</p>
-              <p class="gauge__figure"><span class="headline" data-out="widescreen-width">1200</span> px</p>
-              <p class="gauge__math" data-out="widescreen-math">12 × (60 + 40)</p>
-            </div>
-            <div class="gauge__track col-6 tablet-8">
-              <div class="gauge__grid" aria-hidden="true"></div>
-            </div>
-          </div>
+              <div class="gauge" data-preview="widescreen">
+                <p class="pair">
+                  <span>Widescreen</span>
+                  <span
+                    ><span data-out="widescreen-width">1200px</span
+                    ><span class="hide-mobile"> = <span data-out="widescreen-math">12 × (60 + 40)</span></span></span
+                  >
+                </p>
+                <div class="gauge__grid" aria-hidden="true"></div>
+              </div>
 
-          <div class="row playground__controls">
-            <form class="controls col-4 from-4 tablet-6" aria-label="Grid options">
-              <label class="control">
-                <span class="control__label"><code>--column-width</code><output data-out="cw">40</output></span>
-                <input type="range" name="cw" min="20" max="80" step="2" value="40" />
-              </label>
-              <label class="control">
-                <span class="control__label"><code>--columns</code><output data-out="n">12</output></span>
-                <input type="range" name="n" min="2" max="16" step="1" value="12" />
-              </label>
-              <label class="control">
-                <span class="control__label"><code>--gutter-width</code><output data-out="gw">40</output></span>
-                <input type="range" name="gw" min="0" max="60" step="2" value="40" />
-              </label>
-              <label class="control">
-                <span class="control__label"
-                  ><code>--column-width-widescreen</code><output data-out="cww">60</output></span
-                >
-                <input type="range" name="cww" min="20" max="100" step="2" value="60" />
-              </label>
-              <button class="text-button" type="reset">Reset ↺</button>
-            </form>
-
-            <div class="col-5 tablet-6">
               <div class="code" data-lang="css" data-live="config">
                 <pre><code>:root {
   /* Desktop - Default */
@@ -232,88 +221,60 @@
         </div>
       </section>
 
-      <!-- 03 Ranges -->
+      <!-- Ranges -->
       <section class="section" id="ranges">
         <div class="container">
-          <div class="row section__head">
-            <h2 class="section__label col-3">Ranges</h2>
-            <div class="col-9">
-              <p class="headline">One markup, four ranges.</p>
-              <p class="section__lead">
-                The grid is fluid on small screens and locks to your numbers when there is room for them.
-              </p>
+          <div class="row columns">
+            <div class="col-4">
+              <h2>One markup, four ranges.</h2>
+              <p>The grid is fluid on small screens and locks to your numbers when there is room for them.</p>
             </div>
-          </div>
 
-          <div class="row">
-            <div class="col-9 from-4">
+            <div class="col-8">
               <div class="ruler" aria-hidden="true">
-                <span style="--w: 768"><b>0</b></span>
-                <span style="--w: 232"><b>768</b></span>
-                <span style="--w: 280"><b>1000</b></span>
-                <span style="--w: 320"><b>1280</b></span>
+                <span style="--w: 768">0</span>
+                <span style="--w: 232">768</span>
+                <span style="--w: 280">1000</span>
+                <span style="--w: 320">1280</span>
               </div>
-            </div>
-          </div>
 
-          <div class="ranges" role="table" aria-label="Responsive ranges">
-            <div class="row ranges__head hide-mobile hide-tablet" role="row">
-              <span class="col-2 from-4" role="columnheader">Range</span>
-              <span class="col-2" role="columnheader">Viewport</span>
-              <span class="col-2" role="columnheader">Container</span>
-              <span class="col-1" role="columnheader">Gutter</span>
-              <span class="col-2" role="columnheader">Columns via</span>
-            </div>
-            <div class="row range" role="row">
-              <span class="range__name col-2 from-4 tablet-12 mobile-12" role="cell">Mobile</span>
-              <span class="col-2 tablet-3 mobile-6" role="cell" data-label="Viewport">below 768px</span>
-              <span class="col-2 tablet-3 mobile-6" role="cell" data-label="Container">Fluid</span>
-              <span class="col-1 tablet-3 mobile-6" role="cell" data-label="Gutter"
-                ><span data-out="gutter-mobile">16px</span></span
-              >
-              <span class="col-2 tablet-3 mobile-6" role="cell" data-label="Columns via"><code>.mobile-N</code></span>
-            </div>
-            <div class="row range" role="row">
-              <span class="range__name col-2 from-4 tablet-12 mobile-12" role="cell">Tablet</span>
-              <span class="col-2 tablet-3 mobile-6" role="cell" data-label="Viewport">from 768px</span>
-              <span class="col-2 tablet-3 mobile-6" role="cell" data-label="Container">Fluid</span>
-              <span class="col-1 tablet-3 mobile-6" role="cell" data-label="Gutter"
-                ><span data-out="gutter-tablet">24px</span></span
-              >
-              <span class="col-2 tablet-3 mobile-6" role="cell" data-label="Columns via"><code>.tablet-N</code></span>
-            </div>
-            <div class="row range" role="row">
-              <span class="range__name col-2 from-4 tablet-12 mobile-12" role="cell">Desktop</span>
-              <span class="col-2 tablet-3 mobile-6" role="cell" data-label="Viewport">from 1000px</span>
-              <span class="col-2 tablet-3 mobile-6" role="cell" data-label="Container"
-                ><span data-out="desktop-width-px">960px</span></span
-              >
-              <span class="col-1 tablet-3 mobile-6" role="cell" data-label="Gutter"
-                ><span data-out="gutter-desktop">40px</span></span
-              >
-              <span class="col-2 tablet-3 mobile-6" role="cell" data-label="Columns via"><code>.col-N</code></span>
-            </div>
-            <div class="row range" role="row">
-              <span class="range__name col-2 from-4 tablet-12 mobile-12" role="cell">Widescreen</span>
-              <span class="col-2 tablet-3 mobile-6" role="cell" data-label="Viewport">from 1280px</span>
-              <span class="col-2 tablet-3 mobile-6" role="cell" data-label="Container"
-                ><span data-out="widescreen-width-px">1200px</span></span
-              >
-              <span class="col-1 tablet-3 mobile-6" role="cell" data-label="Gutter"
-                ><span data-out="gutter-desktop">40px</span></span
-              >
-              <span class="col-2 tablet-3 mobile-6" role="cell" data-label="Columns via"><code>.col-N</code></span>
+              <div class="ranges" role="table" aria-label="Responsive ranges">
+                <div class="quad" role="row">
+                  <span role="cell">Mobile</span>
+                  <span role="cell">below 768px</span>
+                  <span role="cell">Fluid</span>
+                  <span role="cell"><code>.mobile-N</code></span>
+                </div>
+                <div class="quad" role="row">
+                  <span role="cell">Tablet</span>
+                  <span role="cell">from 768px</span>
+                  <span role="cell">Fluid</span>
+                  <span role="cell"><code>.tablet-N</code></span>
+                </div>
+                <div class="quad" role="row">
+                  <span role="cell">Desktop</span>
+                  <span role="cell">from 1000px</span>
+                  <span role="cell" data-out="desktop-width">960px</span>
+                  <span role="cell"><code>.col-N</code></span>
+                </div>
+                <div class="quad" role="row">
+                  <span role="cell">Widescreen</span>
+                  <span role="cell">from 1280px</span>
+                  <span role="cell" data-out="widescreen-width">1200px</span>
+                  <span role="cell"><code>.col-N</code></span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- 04 Documentation -->
+      <!-- Documentation -->
       <section class="section" id="documentation">
         <div class="container">
-          <div class="row docs">
-            <div class="col-3">
-              <h2 class="section__label">Documentation</h2>
+          <div class="row columns">
+            <div class="col-4">
+              <h2>Documentation</h2>
               <nav class="docs__nav" aria-label="Documentation">
                 <a href="#doc-overview" data-doc="overview" class="is-active">Overview</a>
                 <a href="#doc-basic" data-doc="basic">Basic Configuration</a>
@@ -323,70 +284,53 @@
               </nav>
             </div>
 
-            <div class="docs__panes col-9">
+            <div class="col-8">
               <article class="doc is-active" id="doc-overview" data-doc-pane="overview">
-                <h3 class="headline doc__title">Overview</h3>
+                <h3 class="doc__title">Overview</h3>
                 <h4>Benefits</h4>
                 <p>
                   Instead of generating a different grid system every time you design a new website, Typegrid
                   allows you to generate and modify responsive grid sets on-the-go, powered by
                   <a href="#doc-basic" data-doc="basic">CSS custom properties</a>.
                 </p>
-                <ul class="benefits">
-                  <li><strong>Setup takes minutes.</strong> Include one file, change four numbers and start laying things out.</li>
-                  <li>
-                    <strong>Typegrid is responsive out of the box.</strong> One set of markup covers four ranges:
-                    mobile [fluid], tablet [fluid], desktop [960px] and widescreen [varies].
-                  </li>
-                  <li>
-                    <strong>Typegrid has no dependency.</strong> All you need is a browser. No preprocessor, no
-                    JavaScript and no build step. Even the math is handled by CSS, not by other languages.
-                  </li>
-                  <li>
-                    Best of all, you get to <strong>change the grid configuration during development</strong>
-                    (including the number of columns)!
-                  </li>
-                </ul>
+                <p>Setup takes minutes. Include one file, change four numbers and start laying things out.</p>
+                <p>
+                  Typegrid is responsive out of the box. One set of markup covers four ranges: mobile [fluid],
+                  tablet [fluid], desktop [960px] and widescreen [varies].
+                </p>
+                <p>
+                  Typegrid has no dependency. All you need is a browser. No preprocessor, no JavaScript and no
+                  build step. Even the math is handled by CSS, not by other languages.
+                </p>
+                <p>
+                  Best of all, you get to change the grid configuration during development (including the
+                  number of columns)!
+                </p>
               </article>
 
               <article class="doc" id="doc-basic" data-doc-pane="basic">
-                <h3 class="headline doc__title">Basic Configuration</h3>
+                <h3 class="doc__title">Basic Configuration</h3>
                 <h4>The four properties</h4>
                 <p>
                   Everything is derived from four unitless numbers on <code>:root</code>. Values are in pixels.
                 </p>
-                <div class="table-wrap">
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>Property</th>
-                        <th>Default</th>
-                        <th>What it does</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td><code>--column-width</code></td>
-                        <td>40</td>
-                        <td>Width of one column on desktop.</td>
-                      </tr>
-                      <tr>
-                        <td><code>--columns</code></td>
-                        <td>12</td>
-                        <td>How many columns the grid has.</td>
-                      </tr>
-                      <tr>
-                        <td><code>--gutter-width</code></td>
-                        <td>40</td>
-                        <td>Space between two columns.</td>
-                      </tr>
-                      <tr>
-                        <td><code>--column-width-widescreen</code></td>
-                        <td>60</td>
-                        <td>Width of one column on large screens.</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                <div class="properties" role="table" aria-label="Configuration properties">
+                  <div class="pair pair--stack" role="row">
+                    <span role="cell"><code>--column-width</code></span>
+                    <span role="cell">Width of one column on desktop. Default 40.</span>
+                  </div>
+                  <div class="pair pair--stack" role="row">
+                    <span role="cell"><code>--columns</code></span>
+                    <span role="cell">How many columns the grid has. Default 12.</span>
+                  </div>
+                  <div class="pair pair--stack" role="row">
+                    <span role="cell"><code>--gutter-width</code></span>
+                    <span role="cell">Space between two columns. Default 40.</span>
+                  </div>
+                  <div class="pair pair--stack" role="row">
+                    <span role="cell"><code>--column-width-widescreen</code></span>
+                    <span role="cell">Width of one column on large screens. Default 60.</span>
+                  </div>
                 </div>
                 <h4>How wide is my grid?</h4>
                 <p>
@@ -396,7 +340,7 @@
               </article>
 
               <article class="doc" id="doc-advanced" data-doc-pane="advanced">
-                <h3 class="headline doc__title">Advanced Configuration</h3>
+                <h3 class="doc__title">Advanced Configuration</h3>
                 <h4>A different grid for one section</h4>
                 <p>
                   Custom properties cascade, so the configuration does not have to be global. Set them on any
@@ -422,7 +366,7 @@
               </article>
 
               <article class="doc" id="doc-mobile" data-doc-pane="mobile">
-                <h3 class="headline doc__title">Mobile</h3>
+                <h3 class="doc__title">Mobile</h3>
                 <h4>Stack first</h4>
                 <p>
                   Below 1000px every column takes the full width, so content reads top to bottom without any
@@ -431,7 +375,8 @@
                 <h4>Opt in when you need columns</h4>
                 <p>
                   Add <code>.mobile-N</code> or <code>.tablet-N</code> next to <code>.col-N</code> when two
-                  things should stay side by side.
+                  things should stay side by side. <code>.hide-mobile</code>, <code>.hide-tablet</code> and
+                  <code>.hide-desktop</code> remove an element from a range.
                 </p>
                 <div class="code" data-lang="html">
                   <pre><code>&lt;div class="row"&gt;
@@ -440,14 +385,10 @@
   &lt;div class="col-6 hide-mobile"&gt;Hidden&lt;/div&gt;
 &lt;/div&gt;</code></pre>
                 </div>
-                <p>
-                  <code>.hide-mobile</code>, <code>.hide-tablet</code> and <code>.hide-desktop</code> remove an
-                  element from a range.
-                </p>
               </article>
 
               <article class="doc" id="doc-markup" data-doc-pane="markup">
-                <h3 class="headline doc__title">Markup</h3>
+                <h3 class="doc__title">Markup</h3>
                 <h4>Container, row, column</h4>
                 <p>Three classes do all the work. Column numbers in a row should add up to 12.</p>
                 <div class="code" data-lang="html">
@@ -489,16 +430,12 @@
         </div>
       </section>
 
-      <!-- 05 About -->
+      <!-- About -->
       <section class="section" id="about">
         <div class="container">
-          <div class="row section__head">
-            <h2 class="section__label col-3">About</h2>
-            <p class="headline col-9">Every layout starts with a few ruled lines.</p>
-          </div>
-
-          <div class="row about">
-            <div class="col-5 from-4">
+          <div class="row columns">
+            <div class="col-4">
+              <h2>Every layout starts with a few ruled lines.</h2>
               <p>
                 Typegrid was built in 2013, when a responsive layout meant floats, clearfixes and a calculator.
                 It did one thing: turn four numbers into a 12-column grid you could change in the middle of a
@@ -510,77 +447,62 @@
               </p>
             </div>
             <div class="col-4">
+              <h3>For the designers, by a developer.</h3>
               <p>
-                <strong>For the designers, by a developer.</strong> I'm <a href="https://park.is/">Park</a>, a
-                front-end developer with a passion for creating minimal yet extremely usable sites. Please
-                visit <a href="https://park.is/">park.is</a> to see more works.
+                I'm <a href="https://park.is/">Park</a>, a front-end developer with a passion for creating
+                minimal yet extremely usable sites. Please visit <a href="https://park.is/">park.is</a> to see
+                more works.
+              </p>
+            </div>
+            <div class="col-4">
+              <h3>Featured</h3>
+              <p>
+                <a href="https://www.behance.net/gallery/9386529/Typegrid" target="_blank" rel="noopener"
+                  >Best of Behance</a
+                >, September 13, 2013.
               </p>
             </div>
           </div>
-
-          <a
-            class="feature row"
-            href="https://www.behance.net/gallery/9386529/Typegrid"
-            target="_blank"
-            rel="noopener"
-          >
-            <span class="section__label col-3">Featured</span>
-            <span class="col-9">
-              <span class="headline">Best of Behance <span aria-hidden="true">↗</span></span>
-              <span class="feature__date">September 13, 2013</span>
-            </span>
-          </a>
         </div>
       </section>
     </main>
 
     <!-- Footer -->
-    <footer class="site-footer">
+    <footer class="section site-footer">
       <div class="container">
-        <div class="row site-footer__row">
-          <div class="col-3 tablet-12 mobile-12">
-            <a class="brand" href="#top" aria-label="Typegrid, back to top">
-              <svg class="brand__mark" viewBox="0 0 11 11" shape-rendering="crispEdges" aria-hidden="true">
-                <path fill="#10decd" d="M0 0h11v4H4v3H0z" />
-                <path fill="#ee4432" d="M11 4v7H0V7h7V4z" />
-              </svg>
-              <span>Typegrid</span>
-            </a>
+        <div class="row columns">
+          <div class="col-4">
+            <h2>Typegrid</h2>
+            <p>2013 to 2026. Set in Inter on its own twelve columns.</p>
           </div>
-          <div class="col-3 tablet-4 mobile-6">
+          <div class="col-4">
             <h2>Contact</h2>
-            <p>Typebig<br />Seoul, Korea</p>
-          </div>
-          <div class="col-3 tablet-4 mobile-6">
-            <h2>Elsewhere</h2>
-            <p>
-              <a href="https://park.is/">park.is ↗</a><br />
-              <a href="https://www.behance.net/gallery/9386529/Typegrid" target="_blank" rel="noopener"
-                >Behance ↗</a
-              >
+            <p class="links">
+              <span>Typebig</span>
+              <span>Seoul, Korea</span>
+              <a href="https://park.is/">park.is <span aria-hidden="true">↗</span></a>
             </p>
           </div>
-          <div class="col-3 tablet-4 mobile-12">
+          <div class="col-4">
             <h2>Share</h2>
-            <p>
+            <p class="links">
+              <a href="https://www.behance.net/gallery/9386529/Typegrid" target="_blank" rel="noopener"
+                >Behance <span aria-hidden="true">↗</span></a
+              >
               <a
                 href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.behance.net%2Fgallery%2F9386529%2FTypegrid"
                 target="_blank"
                 rel="noopener"
-                >Facebook ↗</a
-              ><br />
+                >Facebook <span aria-hidden="true">↗</span></a
+              >
               <a
                 href="https://twitter.com/intent/tweet?text=Typegrid%3A%20set%20up%20your%20grid%20within%20minutes&url=https%3A%2F%2Fwww.behance.net%2Fgallery%2F9386529%2FTypegrid"
                 target="_blank"
                 rel="noopener"
-                >Twitter ↗</a
+                >Twitter <span aria-hidden="true">↗</span></a
               >
             </p>
           </div>
-        </div>
-        <div class="row site-footer__legal">
-          <p class="col-9 tablet-8 mobile-8">Typegrid, 2013 to 2026. Set in Inter on its own twelve columns.</p>
-          <p class="col-3 tablet-4 mobile-4"><a href="#top">Top ↑</a></p>
         </div>
       </div>
     </footer>

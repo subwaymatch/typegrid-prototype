@@ -7,47 +7,26 @@ document.documentElement.classList.add('js')
 const $ = (selector, root = document) => root.querySelector(selector)
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)]
 
-/* Code blocks: line numbers, light highlighting, copy button ----------------- */
+/* Code blocks: one span per line, with the grid's own numbers picked out -------- */
 
 const escapeHtml = (text) => text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 
-function highlightLine(line) {
-  const html = escapeHtml(line)
-  if (/^\s*(\/\*.*\*\/|&lt;!--.*--&gt;)\s*$/.test(html)) return `<span class="tok-comment">${html}</span>`
-  // The value of a custom property declaration, e.g. `--columns: 12;`
-  return html.replace(/^(\s*--[\w-]+:\s*)([^;]+)(;?)$/, '$1<span class="tok-value">$2</span>$3')
-}
+// The value of a custom property declaration, e.g. `--columns: 12;`
+const highlightLine = (line) =>
+  escapeHtml(line).replace(/^(\s*--[\w-]+:\s*)([^;]+)(;?)$/, '$1<span class="tok-value">$2</span>$3')
 
 function renderCode(block, source) {
-  block.dataset.source = source
   $('code', block).innerHTML = source
     .split('\n')
     .map((line) => `<span class="line">${highlightLine(line)}</span>`)
     .join('')
 }
 
-for (const block of $$('.code')) {
-  renderCode(block, $('code', block).textContent.replace(/\s+$/, ''))
-
-  const copy = document.createElement('button')
-  copy.type = 'button'
-  copy.className = 'code__copy'
-  copy.textContent = 'Copy'
-  copy.addEventListener('click', async () => {
-    try {
-      await navigator.clipboard.writeText(block.dataset.source)
-      copy.textContent = 'Copied'
-      setTimeout(() => (copy.textContent = 'Copy'), 1400)
-    } catch {
-      /* Clipboard unavailable (insecure context or denied): leave the button as is. */
-    }
-  })
-  block.append(copy)
-}
+for (const block of $$('.code')) renderCode(block, $('code', block).textContent.replace(/\s+$/, ''))
 
 /* Documentation tabs ---------------------------------------------------------- */
 
-function showDoc(name, { reveal = false } = {}) {
+function showDoc(name) {
   const pane = $(`[data-doc-pane="${name}"]`)
   if (!pane) return
   for (const link of $$('.docs__nav a')) {
@@ -57,18 +36,12 @@ function showDoc(name, { reveal = false } = {}) {
     else link.removeAttribute('aria-current')
   }
   for (const other of $$('[data-doc-pane]')) other.classList.toggle('is-active', other === pane)
-  if (reveal) {
-    // Keep the chosen tab in view when the nav scrolls sideways on small screens.
-    const nav = $('.docs__nav')
-    const link = $('.docs__nav a.is-active')
-    if (nav.scrollWidth > nav.clientWidth) nav.scrollTo({ left: link.offsetLeft - nav.offsetLeft - 24 })
-  }
 }
 
 for (const link of $$('a[data-doc]')) {
   link.addEventListener('click', (event) => {
     event.preventDefault()
-    showDoc(link.dataset.doc, { reveal: true })
+    showDoc(link.dataset.doc)
   })
 }
 
@@ -79,7 +52,6 @@ if (hashDoc) showDoc(hashDoc[1])
 
 const form = $('.controls')
 const liveCode = $('[data-live="config"]')
-const px = (value) => `${Math.round(value * 10) / 10}px`
 
 function renderPlayground() {
   const value = (name) => Number(form.elements[name].value)
@@ -92,22 +64,16 @@ function renderPlayground() {
   const widescreen = (cww + gw) * n
   const widest = Math.max(desktop, widescreen)
 
+  // The same numbers feed the sliders, the strips and the ranges table.
   const set = (name, text) => $$(`[data-out="${name}"]`).forEach((el) => (el.textContent = text))
   set('cw', cw)
   set('n', n)
   set('gw', gw)
   set('cww', cww)
-  set('desktop-width', desktop)
-  set('widescreen-width', widescreen)
+  set('desktop-width', `${desktop}px`)
+  set('widescreen-width', `${widescreen}px`)
   set('desktop-math', `${n} × (${cw} + ${gw})`)
   set('widescreen-math', `${n} × (${cww} + ${gw})`)
-
-  // The ranges table follows the same numbers.
-  set('desktop-width-px', px(desktop))
-  set('widescreen-width-px', px(widescreen))
-  set('gutter-mobile', px(gw * 0.4))
-  set('gutter-tablet', px(gw * 0.6))
-  set('gutter-desktop', px(gw))
 
   // The strips show columns and the gutters between them, so they start flush on the grid line.
   const draw = (name, total) => {

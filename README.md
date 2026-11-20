@@ -7,14 +7,18 @@ released in 2013 and featured on
 The page is a portfolio archive, designed in a minimal Swiss style and set on the grid it
 documents. It follows a few strict rules:
 
-- Three type sizes only: display (the poster), headline, and text. Hierarchy comes from weight
-  and from position on the grid.
-- Two weights, regular and semibold, and one text colour. Red is the only accent.
-- No borders, boxes or filled buttons. Links and buttons are plain text on the column edge.
+- Two type sizes: display (the poster) and one text size for everything else.
+- Two weights, regular and semibold. Semibold is only for titles and the first line of a
+  text column.
+- Three vertical axes: content starts at column 1, 5 or 9 and is set flush left. Every row
+  holds one size of type, so its columns start on the same line.
+- Vertical space comes in 24px units, the height of one line of text.
+- One text colour, with red as the only accent. No borders, boxes or filled buttons.
 
 It opens with the 2013 poster (large type under translucent red bars that fade out toward the
 top and bottom), followed by five sections: Get started, Playground, Ranges, Documentation
-and About.
+and About. Each section puts its title and introduction in the first four columns and its
+content in the other eight.
 
 ## Stack
 
