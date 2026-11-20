@@ -20,174 +20,111 @@
     <script type="module" src="/src/main.js"></script>
   </head>
   <body id="top">
-    <!-- Icon sprite -->
-    <svg class="sprite" aria-hidden="true" focusable="false">
-      <symbol id="i-link" viewBox="0 0 24 24">
-        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
-        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
-      </symbol>
-      <symbol id="i-wrench" viewBox="0 0 24 24">
-        <path
-          d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z"
-        />
-      </symbol>
-      <symbol id="i-laptop" viewBox="0 0 24 24">
-        <path
-          d="M18 5a2 2 0 0 1 2 2v8.526a2 2 0 0 0 .212.897l1.068 2.127a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45l1.068-2.127A2 2 0 0 0 4 15.526V7a2 2 0 0 1 2-2z"
-        />
-        <path d="M20.054 15.987H3.946" />
-      </symbol>
-      <symbol id="i-book" viewBox="0 0 24 24">
-        <path d="M12 5v16" />
-        <path
-          d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"
-        />
-      </symbol>
-      <symbol id="i-download" viewBox="0 0 24 24">
-        <path d="M12 13v8l-4-4" />
-        <path d="m12 21 4-4" />
-        <path d="M4.393 15.269A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.436 8.284" />
-      </symbol>
-      <symbol id="i-pin" viewBox="0 0 24 24">
-        <path
-          d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
-        />
-        <circle cx="12" cy="10" r="3" />
-      </symbol>
-      <symbol id="i-mail" viewBox="0 0 24 24">
-        <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
-        <rect x="2" y="4" width="20" height="16" rx="2" />
-      </symbol>
-      <symbol id="i-copy" viewBox="0 0 24 24">
-        <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
-        <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
-      </symbol>
-      <symbol id="i-check" viewBox="0 0 24 24">
-        <path d="M20 6 9 17l-5-5" />
-      </symbol>
-      <symbol id="i-arrow" viewBox="0 0 24 24">
-        <path d="M7 7h10v10" />
-        <path d="M7 17 17 7" />
-      </symbol>
-      <symbol id="i-facebook" viewBox="0 0 24 24">
-        <path
-          fill="currentColor"
-          stroke="none"
-          d="M13.6 22v-8.9h3l.45-3.5H13.6V7.38c0-1 .28-1.7 1.73-1.7h1.85V2.55A24.6 24.6 0 0 0 14.5 2.4c-2.66 0-4.48 1.62-4.48 4.6v2.6H7v3.5h3.02V22z"
-        />
-      </symbol>
-      <symbol id="i-twitter" viewBox="0 0 24 24">
-        <path
-          fill="currentColor"
-          stroke="none"
-          d="M23.953 4.57a10 10 0 0 1-2.825.775 4.958 4.958 0 0 0 2.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 0 0-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 0 0-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 0 1-2.228-.616v.06a4.923 4.923 0 0 0 3.946 4.827 4.996 4.996 0 0 1-2.212.085 4.936 4.936 0 0 0 4.604 3.417 9.867 9.867 0 0 1-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 0 0 7.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0 0 24 4.59z"
-        />
-      </symbol>
-    </svg>
-
     <!-- Header -->
     <header class="site-header">
       <div class="container">
-        <div class="row">
-          <div class="site-header__inner">
-            <a class="brand" href="#top" aria-label="Typegrid, back to top">
-              <svg class="brand__mark" viewBox="0 0 11 11" shape-rendering="crispEdges" aria-hidden="true">
-                <path fill="#10decd" d="M0 0h11v4H4v3H0z" />
-                <path fill="#ee4432" d="M11 4v7H0V7h7V4z" />
-              </svg>
-              <span class="brand__text">Ready, set, <strong>Typegrid</strong></span>
-            </a>
-            <nav class="social" aria-label="Share">
-              <a
-                class="social__link"
-                href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.behance.net%2Fgallery%2F9386529%2FTypegrid"
-                target="_blank"
-                rel="noopener"
-                aria-label="Share on Facebook"
-              >
-                <svg class="icon"><use href="#i-facebook" /></svg>
-              </a>
-              <a
-                class="social__link"
-                href="https://twitter.com/intent/tweet?text=Typegrid%3A%20set%20up%20your%20grid%20within%20minutes&url=https%3A%2F%2Fwww.behance.net%2Fgallery%2F9386529%2FTypegrid"
-                target="_blank"
-                rel="noopener"
-                aria-label="Share on Twitter"
-              >
-                <svg class="icon"><use href="#i-twitter" /></svg>
-              </a>
-            </nav>
+        <div class="row site-header__row">
+          <a class="brand col-3 tablet-3 mobile-5" href="#top" aria-label="Typegrid, back to top">
+            <svg class="brand__mark" viewBox="0 0 11 11" shape-rendering="crispEdges" aria-hidden="true">
+              <path fill="#10decd" d="M0 0h11v4H4v3H0z" />
+              <path fill="#ee4432" d="M11 4v7H0V7h7V4z" />
+            </svg>
+            <span>Typegrid</span>
+          </a>
+          <nav class="nav col-6 tablet-6 hide-mobile" aria-label="Sections">
+            <a href="#start">Start</a>
+            <a href="#playground">Playground</a>
+            <a href="#ranges">Ranges</a>
+            <a href="#documentation">Docs</a>
+            <a href="#about">About</a>
+          </nav>
+          <div class="site-header__actions col-3 tablet-3 mobile-7">
+            <button class="toggle" type="button" data-action="overlay" aria-pressed="false">
+              <i aria-hidden="true"></i>Grid<kbd class="hide-tablet hide-mobile">G</kbd>
+            </button>
+            <a href="./typegrid.css" download="typegrid.css">Download&nbsp;↓</a>
           </div>
         </div>
       </div>
     </header>
 
     <main>
-      <!-- Hero -->
+      <!-- Poster -->
       <section class="hero">
-        <img
-          class="hero__image"
-          src="/src/assets/hero-1536.webp"
-          srcset="/src/assets/hero-900.webp 900w, /src/assets/hero-1536.webp 1536w"
-          sizes="100vw"
-          width="1536"
-          height="1024"
-          alt=""
-          fetchpriority="high"
-        />
-        <div class="hero__shade" aria-hidden="true"></div>
-        <div class="container hero__content">
-          <div class="row">
-            <div class="hero__copy">
-              <h1 class="hero__title">Set up your grid within minutes.</h1>
-              <p class="hero__lead">
-                Agile grid system for designers &amp; developers<br />
-                Easy setup, update on the fly
-              </p>
-              <div class="hero__actions">
-                <a class="button button--teal" href="#documentation">
-                  <svg class="icon"><use href="#i-book" /></svg>
-                  <span>Documentation</span>
-                </a>
-                <a class="button button--red" href="./typegrid.css" download="typegrid.css">
-                  <svg class="icon"><use href="#i-download" /></svg>
-                  <span>Download (Beta)</span>
-                </a>
+        <div class="container">
+          <div class="poster">
+            <div class="row">
+              <h1 class="poster__text">
+                typegrid<br />
+                the most lightweight and agile grid system that ever existed
+              </h1>
+            </div>
+            <div class="poster__bars" aria-hidden="true"></div>
+          </div>
+
+          <div class="row hero__intro">
+            <dl class="spec col-3 tablet-4">
+              <div>
+                <dt>Version</dt>
+                <dd>1.0 (Beta)</dd>
               </div>
+              <div>
+                <dt>Columns</dt>
+                <dd>12</dd>
+              </div>
+              <div>
+                <dt>Size</dt>
+                <dd>909 B gzipped</dd>
+              </div>
+              <div>
+                <dt>Since</dt>
+                <dd>2013</dd>
+              </div>
+            </dl>
+            <p class="hero__lead col-6 tablet-8">
+              <strong>Set up your grid within minutes.</strong>
+              Agile grid system for designers &amp; developers. Easy setup, update on the fly.
+            </p>
+            <div class="hero__actions col-3 tablet-12">
+              <a class="button" href="#documentation"><span>Documentation</span><span aria-hidden="true">→</span></a>
+              <a class="button button--red" href="./typegrid.css" download="typegrid.css"
+                ><span>Download (Beta)</span><span aria-hidden="true">↓</span></a
+              >
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Ready, set, go -->
-      <section class="steps" id="get-started" aria-label="Get started">
+      <!-- 01 Start -->
+      <section class="section" id="start">
         <div class="container">
-          <div class="row">
-            <article class="step col-4">
-              <header class="step__head">
-                <svg class="icon step__icon"><use href="#i-link" /></svg>
-                <h2 class="step__title">Ready-<br /><span>Include files</span></h2>
-              </header>
+          <div class="row section__head">
+            <p class="section__label col-3"><span>01</span>Get started</p>
+            <h2 class="section__title col-9">Ready, set, go.</h2>
+          </div>
+
+          <div class="row step">
+            <p class="step__name col-3 from-4">Ready</p>
+            <div class="step__body col-6">
+              <h3>Include files</h3>
               <p>
-                Typegrid now runs on plain <a href="#documentation">CSS</a>. Include typegrid.css (one file,
-                under 1KB gzipped) ahead of your own styles.
+                Typegrid runs on plain CSS. Include typegrid.css, one file under 1KB gzipped, ahead of your own
+                styles.
               </p>
               <div class="code" data-lang="html">
                 <pre><code>&lt;!-- typegrid.css --&gt;
-&lt;link rel="stylesheet"
-      href="css/typegrid.css"&gt;
+&lt;link rel="stylesheet" href="css/typegrid.css"&gt;
 
 &lt;!-- your styles --&gt;
-&lt;link rel="stylesheet"
-      href="css/site.css"&gt;</code></pre>
+&lt;link rel="stylesheet" href="css/site.css"&gt;</code></pre>
               </div>
-            </article>
+            </div>
+          </div>
 
-            <article class="step col-4">
-              <header class="step__head">
-                <svg class="icon step__icon"><use href="#i-wrench" /></svg>
-                <h2 class="step__title">Set-<br /><span>Change options</span></h2>
-              </header>
+          <div class="row step">
+            <p class="step__name col-3 from-4">Set</p>
+            <div class="step__body col-6">
+              <h3>Change options</h3>
               <p>There are only four custom properties you need to change.</p>
               <div class="code" data-lang="css">
                 <pre><code>/* Desktop - Default */
@@ -198,29 +135,30 @@
 /* Widescreen */
 --column-width-widescreen: 60;</code></pre>
               </div>
-            </article>
+            </div>
+          </div>
 
-            <article class="step col-4">
-              <header class="step__head">
-                <svg class="icon step__icon"><use href="#i-laptop" /></svg>
-                <h2 class="step__title">Go-<br /><span>Start coding</span></h2>
-              </header>
+          <div class="row step">
+            <p class="step__name col-3 from-4">Go</p>
+            <div class="step__body col-6">
+              <h3>Start coding</h3>
               <p>
                 You're ready to dive into coding. There is nothing to compile before going live: the browser
                 does the math, so every change shows up on the next refresh. For advanced options and other
-                questions, please refer to the documentation below.
+                questions, please refer to the <a href="#documentation">documentation</a> below.
               </p>
-            </article>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Playground -->
-      <section class="section section--ruled playground" id="playground">
+      <!-- 02 Playground -->
+      <section class="section" id="playground">
         <div class="container">
-          <div class="row">
-            <div class="col-8">
-              <h2 class="section__title">Update on the fly</h2>
+          <div class="row section__head">
+            <p class="section__label col-3"><span>02</span>Playground</p>
+            <div class="col-9">
+              <h2 class="section__title">Update on the fly.</h2>
               <p class="section__lead">
                 Four numbers describe the whole grid. Drag them and watch the columns, the container and the
                 code follow.
@@ -228,8 +166,30 @@
             </div>
           </div>
 
-          <div class="row playground__body">
-            <form class="controls col-4" aria-label="Grid options">
+          <div class="row gauge" data-preview="desktop">
+            <div class="gauge__read col-3 from-4 tablet-4">
+              <p class="gauge__label">Desktop</p>
+              <p class="gauge__figure"><span data-out="desktop-width">960</span><small>px</small></p>
+              <p class="gauge__math" data-out="desktop-math">12 × (40 + 40)</p>
+            </div>
+            <div class="gauge__track col-6 tablet-8">
+              <div class="gauge__grid" aria-hidden="true"></div>
+            </div>
+          </div>
+
+          <div class="row gauge" data-preview="widescreen">
+            <div class="gauge__read col-3 from-4 tablet-4">
+              <p class="gauge__label">Widescreen</p>
+              <p class="gauge__figure"><span data-out="widescreen-width">1200</span><small>px</small></p>
+              <p class="gauge__math" data-out="widescreen-math">12 × (60 + 40)</p>
+            </div>
+            <div class="gauge__track col-6 tablet-8">
+              <div class="gauge__grid" aria-hidden="true"></div>
+            </div>
+          </div>
+
+          <div class="row playground__controls">
+            <form class="controls col-4 from-4 tablet-6" aria-label="Grid options">
               <label class="control">
                 <span class="control__label"><code>--column-width</code><output data-out="cw">40</output></span>
                 <input type="range" name="cw" min="20" max="80" step="2" value="40" />
@@ -248,32 +208,10 @@
                 >
                 <input type="range" name="cww" min="20" max="100" step="2" value="60" />
               </label>
-
-              <div class="controls__actions">
-                <button class="chip" type="reset">Reset</button>
-                <button class="chip" type="button" data-action="overlay" aria-pressed="false">
-                  Show this page's grid <kbd>G</kbd>
-                </button>
-              </div>
+              <button class="text-button" type="reset">Reset ↺</button>
             </form>
 
-            <div class="col-8">
-              <figure class="preview" data-preview="desktop">
-                <figcaption>
-                  <span class="preview__name">Desktop</span>
-                  <span class="preview__math" data-out="desktop-math">12 × (40 + 40) = 960px</span>
-                </figcaption>
-                <div class="preview__grid" aria-hidden="true"></div>
-              </figure>
-
-              <figure class="preview" data-preview="widescreen">
-                <figcaption>
-                  <span class="preview__name">Widescreen</span>
-                  <span class="preview__math" data-out="widescreen-math">12 × (60 + 40) = 1200px</span>
-                </figcaption>
-                <div class="preview__grid" aria-hidden="true"></div>
-              </figure>
-
+            <div class="col-5 tablet-6">
               <div class="code" data-lang="css" data-live="config">
                 <pre><code>:root {
   /* Desktop - Default */
@@ -290,57 +228,91 @@
         </div>
       </section>
 
-      <!-- Ranges -->
-      <section class="section section--ruled ranges" id="ranges">
+      <!-- 03 Ranges -->
+      <section class="section" id="ranges">
         <div class="container">
-          <div class="row">
-            <div class="col-8">
-              <h2 class="section__title">One markup, four ranges</h2>
+          <div class="row section__head">
+            <p class="section__label col-3"><span>03</span>Ranges</p>
+            <div class="col-9">
+              <h2 class="section__title">One markup, four ranges.</h2>
               <p class="section__lead">
                 The grid is fluid on small screens and locks to your numbers when there is room for them.
               </p>
             </div>
           </div>
 
-          <div class="row ranges__list">
-            <article class="range col-3 tablet-6 mobile-6">
-              <div class="range__art" aria-hidden="true"><i class="device device--mobile"></i></div>
-              <h3 class="range__name">Mobile</h3>
-              <p class="range__size">Fluid <span>below 768px</span></p>
-              <p>Columns stack. Keep things side by side with <code>.mobile-N</code>.</p>
-            </article>
-            <article class="range col-3 tablet-6 mobile-6">
-              <div class="range__art" aria-hidden="true"><i class="device device--tablet"></i></div>
-              <h3 class="range__name">Tablet</h3>
-              <p class="range__size">Fluid <span>from 768px</span></p>
-              <p>Still fluid, with wider gutters. Opt in with <code>.tablet-N</code>.</p>
-            </article>
-            <article class="range col-3 tablet-6 mobile-6">
-              <div class="range__art" aria-hidden="true"><i class="device device--desktop"></i></div>
-              <h3 class="range__name">Desktop</h3>
-              <p class="range__size"><b data-out="desktop-width">960px</b> <span>from 1000px</span></p>
-              <p>The grid you configured, centred. <code>.col-N</code> takes over here.</p>
-            </article>
-            <article class="range col-3 tablet-6 mobile-6">
-              <div class="range__art" aria-hidden="true"><i class="device device--widescreen"></i></div>
-              <h3 class="range__name">Widescreen</h3>
-              <p class="range__size"><b data-out="widescreen-width">1200px</b> <span>from 1280px</span></p>
-              <p>Same columns, more air. Only the column width changes.</p>
-            </article>
+          <div class="row">
+            <div class="col-9 from-4">
+              <div class="ruler" aria-hidden="true">
+                <span style="--w: 768"><b>0</b></span>
+                <span style="--w: 232"><b>768</b></span>
+                <span style="--w: 280"><b>1000</b></span>
+                <span style="--w: 320"><b>1280</b></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ranges" role="table" aria-label="Responsive ranges">
+            <div class="row ranges__head hide-mobile hide-tablet" role="row">
+              <span class="col-2 from-4" role="columnheader">Range</span>
+              <span class="col-2" role="columnheader">Viewport</span>
+              <span class="col-2" role="columnheader">Container</span>
+              <span class="col-1" role="columnheader">Gutter</span>
+              <span class="col-2" role="columnheader">Columns via</span>
+            </div>
+            <div class="row range" role="row">
+              <span class="range__name col-2 from-4 tablet-12 mobile-12" role="cell">Mobile</span>
+              <span class="col-2 tablet-3 mobile-6" role="cell" data-label="Viewport">below 768px</span>
+              <span class="col-2 tablet-3 mobile-6" role="cell" data-label="Container">Fluid</span>
+              <span class="col-1 tablet-3 mobile-6" role="cell" data-label="Gutter"
+                ><span data-out="gutter-mobile">16px</span></span
+              >
+              <span class="col-2 tablet-3 mobile-6" role="cell" data-label="Columns via"><code>.mobile-N</code></span>
+            </div>
+            <div class="row range" role="row">
+              <span class="range__name col-2 from-4 tablet-12 mobile-12" role="cell">Tablet</span>
+              <span class="col-2 tablet-3 mobile-6" role="cell" data-label="Viewport">from 768px</span>
+              <span class="col-2 tablet-3 mobile-6" role="cell" data-label="Container">Fluid</span>
+              <span class="col-1 tablet-3 mobile-6" role="cell" data-label="Gutter"
+                ><span data-out="gutter-tablet">24px</span></span
+              >
+              <span class="col-2 tablet-3 mobile-6" role="cell" data-label="Columns via"><code>.tablet-N</code></span>
+            </div>
+            <div class="row range" role="row">
+              <span class="range__name col-2 from-4 tablet-12 mobile-12" role="cell">Desktop</span>
+              <span class="col-2 tablet-3 mobile-6" role="cell" data-label="Viewport">from 1000px</span>
+              <span class="col-2 tablet-3 mobile-6" role="cell" data-label="Container"
+                ><span data-out="desktop-width-px">960px</span></span
+              >
+              <span class="col-1 tablet-3 mobile-6" role="cell" data-label="Gutter"
+                ><span data-out="gutter-desktop">40px</span></span
+              >
+              <span class="col-2 tablet-3 mobile-6" role="cell" data-label="Columns via"><code>.col-N</code></span>
+            </div>
+            <div class="row range" role="row">
+              <span class="range__name col-2 from-4 tablet-12 mobile-12" role="cell">Widescreen</span>
+              <span class="col-2 tablet-3 mobile-6" role="cell" data-label="Viewport">from 1280px</span>
+              <span class="col-2 tablet-3 mobile-6" role="cell" data-label="Container"
+                ><span data-out="widescreen-width-px">1200px</span></span
+              >
+              <span class="col-1 tablet-3 mobile-6" role="cell" data-label="Gutter"
+                ><span data-out="gutter-desktop">40px</span></span
+              >
+              <span class="col-2 tablet-3 mobile-6" role="cell" data-label="Columns via"><code>.col-N</code></span>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Documentation -->
-      <section class="section section--ruled docs" id="documentation">
+      <!-- 04 Documentation -->
+      <section class="section" id="documentation">
         <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <h2 class="section__title">Documentation</h2>
-            </div>
+          <div class="row section__head">
+            <p class="section__label col-3"><span>04</span>Documentation</p>
+            <h2 class="section__title col-9">Documentation.</h2>
           </div>
 
-          <div class="row">
+          <div class="row docs">
             <nav class="docs__nav col-3" aria-label="Documentation">
               <a href="#doc-overview" data-doc="overview" class="is-active">Overview</a>
               <a href="#doc-basic" data-doc="basic">Basic Configuration</a>
@@ -349,7 +321,7 @@
               <a href="#doc-markup" data-doc="markup">Markup</a>
             </nav>
 
-            <div class="docs__panel col-9">
+            <div class="docs__panes col-9">
               <article class="doc is-active" id="doc-overview" data-doc-pane="overview">
                 <h3 class="doc__title">Overview</h3>
                 <h4>Benefits</h4>
@@ -358,21 +330,18 @@
                   allows you to generate and modify responsive grid sets on-the-go, powered by
                   <a href="#doc-basic" data-doc="basic">CSS custom properties</a>.
                 </p>
-                <ol>
+                <ol class="benefits">
+                  <li><strong>Setup takes minutes.</strong> Include one file, change four numbers and start laying things out.</li>
                   <li>
-                    <mark>Setup takes minutes.</mark> Include one file, change four numbers and start laying
-                    things out.
-                  </li>
-                  <li>
-                    <mark>Typegrid is responsive out of the box.</mark> One set of markup covers four ranges:
+                    <strong>Typegrid is responsive out of the box.</strong> One set of markup covers four ranges:
                     mobile [fluid], tablet [fluid], desktop [960px] and widescreen [varies].
                   </li>
                   <li>
-                    <mark>Typegrid has no dependency.</mark> All you need is a browser. No preprocessor, no
+                    <strong>Typegrid has no dependency.</strong> All you need is a browser. No preprocessor, no
                     JavaScript and no build step. Even the math is handled by CSS, not by other languages.
                   </li>
                   <li>
-                    Best of all, you get to <mark>change the grid configuration during development</mark>
+                    Best of all, you get to <strong>change the grid configuration during development</strong>
                     (including the number of columns)!
                   </li>
                 </ol>
@@ -382,8 +351,7 @@
                 <h3 class="doc__title">Basic Configuration</h3>
                 <h4>The four properties</h4>
                 <p>
-                  Everything is derived from four unitless numbers on <code>:root</code>. Values are in
-                  pixels.
+                  Everything is derived from four unitless numbers on <code>:root</code>. Values are in pixels.
                 </p>
                 <div class="table-wrap">
                   <table>
@@ -441,8 +409,8 @@
                 </div>
                 <h4>Breakpoints</h4>
                 <p>
-                  The ranges switch at 768px, 1000px and 1280px. If your numbers add up to more than the
-                  screen can hold, the container simply stays fluid instead of overflowing.
+                  The ranges switch at 768px, 1000px and 1280px. If your numbers add up to more than the screen
+                  can hold, the container simply stays fluid instead of overflowing.
                 </p>
                 <h4>Nesting</h4>
                 <p>
@@ -456,8 +424,7 @@
                 <h4>Stack first</h4>
                 <p>
                   Below 1000px every column takes the full width, so content reads top to bottom without any
-                  extra work. Gutters shrink with the screen: 40% of your gutter width on mobile, 60% on
-                  tablet.
+                  extra work. Gutters shrink with the screen: 40% of your gutter width on mobile, 60% on tablet.
                 </p>
                 <h4>Opt in when you need columns</h4>
                 <p>
@@ -492,26 +459,26 @@
                 <h4>Live example</h4>
                 <div class="demo" aria-label="Column examples">
                   <div class="row">
-                    <div class="col-12 tablet-12 mobile-12"><span>.col-12</span></div>
+                    <div class="col-12 tablet-12 mobile-12"><span>12</span></div>
                   </div>
                   <div class="row">
-                    <div class="col-8 tablet-8 mobile-8"><span>.col-8</span></div>
-                    <div class="col-4 tablet-4 mobile-4"><span>.col-4</span></div>
+                    <div class="col-8 tablet-8 mobile-8"><span>8</span></div>
+                    <div class="col-4 tablet-4 mobile-4"><span>4</span></div>
                   </div>
                   <div class="row">
-                    <div class="col-6 tablet-6 mobile-6"><span>.col-6</span></div>
-                    <div class="col-6 tablet-6 mobile-6"><span>.col-6</span></div>
+                    <div class="col-6 tablet-6 mobile-6"><span>6</span></div>
+                    <div class="col-6 tablet-6 mobile-6"><span>6</span></div>
                   </div>
                   <div class="row">
-                    <div class="col-4 tablet-4 mobile-4"><span>.col-4</span></div>
-                    <div class="col-4 tablet-4 mobile-4"><span>.col-4</span></div>
-                    <div class="col-4 tablet-4 mobile-4"><span>.col-4</span></div>
+                    <div class="col-4 tablet-4 mobile-4"><span>4</span></div>
+                    <div class="col-4 tablet-4 mobile-4"><span>4</span></div>
+                    <div class="col-4 tablet-4 mobile-4"><span>4</span></div>
                   </div>
                   <div class="row">
-                    <div class="col-3 tablet-3 mobile-3"><span>.col-3</span></div>
-                    <div class="col-3 tablet-3 mobile-3"><span>.col-3</span></div>
-                    <div class="col-3 tablet-3 mobile-3"><span>.col-3</span></div>
-                    <div class="col-3 tablet-3 mobile-3"><span>.col-3</span></div>
+                    <div class="col-3 tablet-3 mobile-3"><span>3</span></div>
+                    <div class="col-3 tablet-3 mobile-3"><span>3</span></div>
+                    <div class="col-3 tablet-3 mobile-3"><span>3</span></div>
+                    <div class="col-3 tablet-3 mobile-3"><span>3</span></div>
                   </div>
                 </div>
               </article>
@@ -520,125 +487,98 @@
         </div>
       </section>
 
-      <!-- Poster -->
-      <section class="poster" aria-label="Typegrid poster">
-        <div class="container poster__inner">
-          <div class="row poster__bars" aria-hidden="true">
-            <i class="col-1 tablet-1 mobile-1"></i><i class="col-1 tablet-1 mobile-1"></i
-            ><i class="col-1 tablet-1 mobile-1"></i><i class="col-1 tablet-1 mobile-1"></i
-            ><i class="col-1 tablet-1 mobile-1"></i><i class="col-1 tablet-1 mobile-1"></i
-            ><i class="col-1 tablet-1 mobile-1"></i><i class="col-1 tablet-1 mobile-1"></i
-            ><i class="col-1 tablet-1 mobile-1"></i><i class="col-1 tablet-1 mobile-1"></i
-            ><i class="col-1 tablet-1 mobile-1"></i><i class="col-1 tablet-1 mobile-1"></i>
+      <!-- 05 About -->
+      <section class="section" id="about">
+        <div class="container">
+          <div class="row section__head">
+            <p class="section__label col-3"><span>05</span>About</p>
+            <h2 class="section__title col-9">Every layout starts with a few ruled lines.</h2>
           </div>
-          <div class="row">
-            <p class="poster__text">
-              typegrid<br />
-              the most lightweight and agile grid system that ever existed
-            </p>
-          </div>
-          <div class="row poster__bars poster__bars--veil" aria-hidden="true">
-            <i class="col-1 tablet-1 mobile-1"></i><i class="col-1 tablet-1 mobile-1"></i
-            ><i class="col-1 tablet-1 mobile-1"></i><i class="col-1 tablet-1 mobile-1"></i
-            ><i class="col-1 tablet-1 mobile-1"></i><i class="col-1 tablet-1 mobile-1"></i
-            ><i class="col-1 tablet-1 mobile-1"></i><i class="col-1 tablet-1 mobile-1"></i
-            ><i class="col-1 tablet-1 mobile-1"></i><i class="col-1 tablet-1 mobile-1"></i
-            ><i class="col-1 tablet-1 mobile-1"></i><i class="col-1 tablet-1 mobile-1"></i>
-          </div>
-        </div>
-      </section>
 
-      <!-- Story -->
-      <section class="story" id="story">
-        <img
-          class="story__image"
-          src="/src/assets/desk-1536.webp"
-          srcset="/src/assets/desk-900.webp 900w, /src/assets/desk-1536.webp 1536w"
-          sizes="100vw"
-          width="1536"
-          height="1024"
-          alt=""
-          loading="lazy"
-        />
-        <div class="container story__content">
-          <div class="row">
-            <div class="col-6 tablet-8">
-              <p class="eyebrow">Since 2013</p>
-              <h2 class="story__title">Every layout starts with a few ruled lines.</h2>
+          <div class="row about">
+            <div class="col-5 from-4">
               <p>
-                Typegrid was built in 2013, when a responsive layout meant floats, clearfixes and a
-                calculator. It did one thing: turn four numbers into a 12-column grid you could change in the
-                middle of a project.
+                Typegrid was built in 2013, when a responsive layout meant floats, clearfixes and a calculator.
+                It did one thing: turn four numbers into a 12-column grid you could change in the middle of a
+                project.
               </p>
               <p>
                 The original ran on less.js. This edition keeps the idea and swaps the machinery for CSS Grid
                 and custom properties.
               </p>
-              <a
-                class="feature"
-                href="https://www.behance.net/gallery/9386529/Typegrid"
-                target="_blank"
-                rel="noopener"
-              >
-                <span class="feature__label">Featured</span>
-                <span class="feature__text"
-                  >Best of Behance <span class="feature__date">September 13, 2013</span></span
-                >
-                <svg class="icon"><use href="#i-arrow" /></svg>
-              </a>
             </div>
+            <div class="col-4">
+              <p>
+                <strong>For the designers, by a developer.</strong> I'm <a href="https://park.is/">Park</a>, a
+                front-end developer with a passion for creating minimal yet extremely usable sites. Please
+                visit <a href="https://park.is/">park.is</a> to see more works.
+              </p>
+            </div>
+          </div>
+
+          <div class="row">
+            <a
+              class="feature col-9 from-4"
+              href="https://www.behance.net/gallery/9386529/Typegrid"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="feature__label">Featured</span>
+              <span class="feature__name">Best of Behance</span>
+              <span class="feature__date">September 13, 2013 <span aria-hidden="true">↗</span></span>
+            </a>
           </div>
         </div>
       </section>
     </main>
 
     <!-- Footer -->
-    <footer class="site-footer" id="contact">
+    <footer class="site-footer">
       <div class="container">
         <div class="row site-footer__row">
-          <h2 class="site-footer__label col-2">About</h2>
-          <div class="col-5">
-            <p class="site-footer__title"><strong>For the designers,</strong><br />by a developer</p>
+          <div class="col-3 tablet-12 mobile-12">
+            <a class="brand" href="#top" aria-label="Typegrid, back to top">
+              <svg class="brand__mark" viewBox="0 0 11 11" shape-rendering="crispEdges" aria-hidden="true">
+                <path fill="#10decd" d="M0 0h11v4H4v3H0z" />
+                <path fill="#ee4432" d="M11 4v7H0V7h7V4z" />
+              </svg>
+              <span>Typegrid</span>
+            </a>
+          </div>
+          <div class="col-3 tablet-4 mobile-6">
+            <h2>Contact</h2>
+            <p>Typebig<br />Seoul, Korea</p>
+          </div>
+          <div class="col-3 tablet-4 mobile-6">
+            <h2>Elsewhere</h2>
             <p>
-              I'm <a href="https://park.is/">Park</a>, a front-end developer with a passion for creating
-              minimal yet extremely usable sites. Please visit <a href="https://park.is/">park.is</a> to see
-              more works.
+              <a href="https://park.is/">park.is ↗</a><br />
+              <a href="https://www.behance.net/gallery/9386529/Typegrid" target="_blank" rel="noopener"
+                >Behance ↗</a
+              >
             </p>
           </div>
-          <form class="signup col-4" novalidate>
-            <label class="signup__label" for="signup-email">Email</label>
-            <input
-              class="signup__input"
-              id="signup-email"
-              type="email"
-              name="email"
-              placeholder="your@email.com"
-              autocomplete="email"
-            />
-            <button class="signup__button" type="submit">Sign Up</button>
-            <p class="signup__note" role="status" aria-live="polite"></p>
-          </form>
-        </div>
-
-        <div class="row site-footer__row">
-          <h2 class="site-footer__label col-2">Contact</h2>
-          <div class="contact col-5 tablet-6">
-            <svg class="icon contact__icon"><use href="#i-pin" /></svg>
-            <p><strong>Typebig</strong><br />Seoul, Korea</p>
-          </div>
-          <div class="contact col-5 tablet-6">
-            <svg class="icon contact__icon"><use href="#i-mail" /></svg>
+          <div class="col-3 tablet-4 mobile-12">
+            <h2>Share</h2>
             <p>
-              Get in touch<br />
-              <a href="https://park.is/"><strong>park.is</strong></a>
+              <a
+                href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.behance.net%2Fgallery%2F9386529%2FTypegrid"
+                target="_blank"
+                rel="noopener"
+                >Facebook ↗</a
+              ><br />
+              <a
+                href="https://twitter.com/intent/tweet?text=Typegrid%3A%20set%20up%20your%20grid%20within%20minutes&url=https%3A%2F%2Fwww.behance.net%2Fgallery%2F9386529%2FTypegrid"
+                target="_blank"
+                rel="noopener"
+                >Twitter ↗</a
+              >
             </p>
           </div>
         </div>
-
-        <div class="row">
-          <p class="site-footer__legal">
-            Typegrid, 2013. Rebuilt in 2026 as an archive. Hero and desk photographs are AI-generated.
-          </p>
+        <div class="row site-footer__legal">
+          <p class="col-9 tablet-8 mobile-8">Typegrid, 2013 to 2026. Set in Inter on its own twelve columns.</p>
+          <p class="col-3 tablet-4 mobile-4"><a href="#top">Top ↑</a></p>
         </div>
       </div>
     </footer>

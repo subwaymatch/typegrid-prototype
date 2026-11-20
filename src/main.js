@@ -6,7 +6,6 @@ document.documentElement.classList.add('js')
 
 const $ = (selector, root = document) => root.querySelector(selector)
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)]
-const icon = (name) => `<svg class="icon" aria-hidden="true"><use href="#i-${name}"/></svg>`
 
 /* Code blocks: line numbers, light highlighting, copy button ----------------- */
 
@@ -25,7 +24,6 @@ function renderCode(block, source) {
     .split('\n')
     .map((line) => `<span class="line">${highlightLine(line)}</span>`)
     .join('')
-  block.classList.add('is-numbered')
 }
 
 for (const block of $$('.code')) {
@@ -34,13 +32,12 @@ for (const block of $$('.code')) {
   const copy = document.createElement('button')
   copy.type = 'button'
   copy.className = 'code__copy'
-  copy.setAttribute('aria-label', 'Copy code')
-  copy.innerHTML = icon('copy')
+  copy.textContent = 'Copy'
   copy.addEventListener('click', async () => {
     try {
       await navigator.clipboard.writeText(block.dataset.source)
-      copy.innerHTML = icon('check')
-      setTimeout(() => (copy.innerHTML = icon('copy')), 1400)
+      copy.textContent = 'Copied'
+      setTimeout(() => (copy.textContent = 'Copy'), 1400)
     } catch {
       /* Clipboard unavailable (insecure context or denied): leave the button as is. */
     }
@@ -50,7 +47,7 @@ for (const block of $$('.code')) {
 
 /* Documentation tabs ---------------------------------------------------------- */
 
-function showDoc(name, { focus = false } = {}) {
+function showDoc(name, { reveal = false } = {}) {
   const pane = $(`[data-doc-pane="${name}"]`)
   if (!pane) return
   for (const link of $$('.docs__nav a')) {
@@ -60,13 +57,18 @@ function showDoc(name, { focus = false } = {}) {
     else link.removeAttribute('aria-current')
   }
   for (const other of $$('[data-doc-pane]')) other.classList.toggle('is-active', other === pane)
-  if (focus) $('.docs__nav a.is-active')?.scrollIntoView({ block: 'nearest', inline: 'nearest' })
+  if (reveal) {
+    // Keep the chosen tab in view when the nav scrolls sideways on small screens.
+    const nav = $('.docs__nav')
+    const link = $('.docs__nav a.is-active')
+    if (nav.scrollWidth > nav.clientWidth) nav.scrollTo({ left: link.offsetLeft - nav.offsetLeft - 24 })
+  }
 }
 
 for (const link of $$('a[data-doc]')) {
   link.addEventListener('click', (event) => {
     event.preventDefault()
-    showDoc(link.dataset.doc, { focus: true })
+    showDoc(link.dataset.doc, { reveal: true })
   })
 }
 
@@ -77,7 +79,7 @@ if (hashDoc) showDoc(hashDoc[1])
 
 const form = $('.controls')
 const liveCode = $('[data-live="config"]')
-const out = (name) => $$(`[data-out="${name}"]`)
+const px = (value) => `${Math.round(value * 10) / 10}px`
 
 function renderPlayground() {
   const value = (name) => Number(form.elements[name].value)
@@ -90,25 +92,32 @@ function renderPlayground() {
   const widescreen = (cww + gw) * n
   const widest = Math.max(desktop, widescreen)
 
-  const set = (name, text) => out(name).forEach((el) => (el.textContent = text))
+  const set = (name, text) => $$(`[data-out="${name}"]`).forEach((el) => (el.textContent = text))
   set('cw', cw)
   set('n', n)
   set('gw', gw)
   set('cww', cww)
-  set('desktop-math', `${n} × (${cw} + ${gw}) = ${desktop}px`)
-  set('widescreen-math', `${n} × (${cww} + ${gw}) = ${widescreen}px`)
-  set('desktop-width', `${desktop}px`)
-  set('widescreen-width', `${widescreen}px`)
+  set('desktop-width', desktop)
+  set('widescreen-width', widescreen)
+  set('desktop-math', `${n} × (${cw} + ${gw})`)
+  set('widescreen-math', `${n} × (${cww} + ${gw})`)
 
-  const draw = (name, column, total) => {
-    const grid = $(`[data-preview="${name}"] .preview__grid`)
+  // The ranges table follows the same numbers.
+  set('desktop-width-px', px(desktop))
+  set('widescreen-width-px', px(widescreen))
+  set('gutter-mobile', px(gw * 0.4))
+  set('gutter-tablet', px(gw * 0.6))
+  set('gutter-desktop', px(gw))
+
+  const draw = (name, total) => {
+    const grid = $(`[data-preview="${name}"] .gauge__grid`)
     if (grid.children.length !== n) grid.innerHTML = '<i></i>'.repeat(n)
     grid.style.setProperty('--w', `${(total / widest) * 100}%`)
     // Half a gutter on each side of a column, as a share of the whole grid.
     grid.style.setProperty('--pad', `${(gw / 2 / total) * 100}%`)
   }
-  draw('desktop', cw, desktop)
-  draw('widescreen', cww, widescreen)
+  draw('desktop', desktop)
+  draw('widescreen', widescreen)
 
   renderCode(
     liveCode,
@@ -150,20 +159,4 @@ document.addEventListener('keydown', (event) => {
   if (event.key.toLowerCase() !== 'g' || event.metaKey || event.ctrlKey || event.altKey) return
   if (event.target.closest('input:not([type="range"]), textarea, select, [contenteditable]')) return
   toggleOverlay()
-})
-
-/* Sign-up form: this is an archive, so nothing is sent anywhere ------------------- */
-
-const signup = $('.signup')
-signup.addEventListener('submit', (event) => {
-  event.preventDefault()
-  const input = $('.signup__input', signup)
-  const note = $('.signup__note', signup)
-  if (!input.value.trim() || !input.checkValidity()) {
-    note.textContent = 'Please enter a valid email address.'
-    input.focus()
-    return
-  }
-  input.value = ''
-  note.textContent = 'Thanks! This page is an archive, so nothing was sent or stored.'
 })
