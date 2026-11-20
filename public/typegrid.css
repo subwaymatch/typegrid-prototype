@@ -1,0 +1,124 @@
+/*!
+ * Typegrid 1.0 (Beta)
+ * An agile 12-column grid system for designers & developers.
+ * First written in 2013 on less.js. Rebuilt on CSS Grid and custom properties.
+ * https://park.is
+ *
+ * Change the four properties below. Everything else follows.
+ */
+
+:root {
+  /* Desktop - Default */
+  --column-width: 40;
+  --columns: 12;
+  --gutter-width: 40;
+
+  /* Widescreen */
+  --column-width-widescreen: 60;
+}
+
+/* Mobile [fluid] ---------------------------------------------------------- */
+
+.container,
+.row {
+  --tg-gutter: calc(var(--gutter-width) * 0.4px);
+}
+
+.container {
+  box-sizing: border-box;
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: calc(var(--tg-gutter) * 0.75);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+  column-gap: var(--tg-gutter);
+  padding-inline: calc(var(--tg-gutter) / 2);
+}
+
+.row .row {
+  padding-inline: 0;
+}
+
+/* Columns stack until a class says otherwise. */
+.row > * {
+  grid-column: 1 / -1;
+  min-width: 0;
+}
+
+@media (max-width: 767px) {
+  .mobile-1 { grid-column: span 1; }
+  .mobile-2 { grid-column: span 2; }
+  .mobile-3 { grid-column: span 3; }
+  .mobile-4 { grid-column: span 4; }
+  .mobile-5 { grid-column: span 5; }
+  .mobile-6 { grid-column: span 6; }
+  .mobile-7 { grid-column: span 7; }
+  .mobile-8 { grid-column: span 8; }
+  .mobile-9 { grid-column: span 9; }
+  .mobile-10 { grid-column: span 10; }
+  .mobile-11 { grid-column: span 11; }
+  .mobile-12 { grid-column: span 12; }
+  .hide-mobile { display: none !important; }
+}
+
+/* Tablet [fluid] ---------------------------------------------------------- */
+
+@media (min-width: 768px) and (max-width: 999px) {
+  .container,
+  .row {
+    --tg-gutter: calc(var(--gutter-width) * 0.6px);
+  }
+
+  .tablet-1 { grid-column: span 1; }
+  .tablet-2 { grid-column: span 2; }
+  .tablet-3 { grid-column: span 3; }
+  .tablet-4 { grid-column: span 4; }
+  .tablet-5 { grid-column: span 5; }
+  .tablet-6 { grid-column: span 6; }
+  .tablet-7 { grid-column: span 7; }
+  .tablet-8 { grid-column: span 8; }
+  .tablet-9 { grid-column: span 9; }
+  .tablet-10 { grid-column: span 10; }
+  .tablet-11 { grid-column: span 11; }
+  .tablet-12 { grid-column: span 12; }
+  .hide-tablet { display: none !important; }
+}
+
+/* Desktop [960px by default] ---------------------------------------------- */
+
+@media (min-width: 1000px) {
+  .container,
+  .row {
+    --tg-gutter: calc(var(--gutter-width) * 1px);
+  }
+
+  .container {
+    width: min(100%, calc((var(--column-width) + var(--gutter-width)) * var(--columns) * 1px));
+    padding-inline: 0;
+  }
+
+  .col-1 { grid-column: span 1; }
+  .col-2 { grid-column: span 2; }
+  .col-3 { grid-column: span 3; }
+  .col-4 { grid-column: span 4; }
+  .col-5 { grid-column: span 5; }
+  .col-6 { grid-column: span 6; }
+  .col-7 { grid-column: span 7; }
+  .col-8 { grid-column: span 8; }
+  .col-9 { grid-column: span 9; }
+  .col-10 { grid-column: span 10; }
+  .col-11 { grid-column: span 11; }
+  .col-12 { grid-column: span 12; }
+  .hide-desktop { display: none !important; }
+}
+
+/* Widescreen [varies] ----------------------------------------------------- */
+
+@media (min-width: 1280px) {
+  .container {
+    width: min(100%, calc((var(--column-width-widescreen) + var(--gutter-width)) * var(--columns) * 1px));
+  }
+}
