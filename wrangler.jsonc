@@ -1,0 +1,8 @@
+{
+  // Static site: `npm run build`, then `npx wrangler deploy`.
+  "name": "typegrid",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./dist"
+  }
+}
