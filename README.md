@@ -5,7 +5,9 @@ released in 2013 and featured on
 [Best of Behance](https://www.behance.net/gallery/9386529/Typegrid) on September 13, 2013.
 
 The page is a portfolio archive, designed in a minimal Swiss style: one typeface, three
-weights, black rules and two colours, all set on the grid the page documents. It opens with
+weights and one text colour, all set on the grid the page documents. There are no borders,
+boxes or filled buttons; structure comes from the columns, whitespace and type size, and red
+is the only accent. It opens with
 the 2013 poster (large type under translucent red bars that fade out toward the top and
 bottom), followed by five numbered sections: Get started, Playground, Ranges, Documentation
 and About.

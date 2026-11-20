@@ -109,12 +109,12 @@ function renderPlayground() {
   set('gutter-tablet', px(gw * 0.6))
   set('gutter-desktop', px(gw))
 
+  // The strips show columns and the gutters between them, so they start flush on the grid line.
   const draw = (name, total) => {
     const grid = $(`[data-preview="${name}"] .gauge__grid`)
     if (grid.children.length !== n) grid.innerHTML = '<i></i>'.repeat(n)
-    grid.style.setProperty('--w', `${(total / widest) * 100}%`)
-    // Half a gutter on each side of a column, as a share of the whole grid.
-    grid.style.setProperty('--pad', `${(gw / 2 / total) * 100}%`)
+    grid.style.setProperty('--w', `${((total - gw) / (widest - gw)) * 100}%`)
+    grid.style.setProperty('--gap', `${(gw / (total - gw)) * 100}%`)
   }
   draw('desktop', desktop)
   draw('widescreen', widescreen)
