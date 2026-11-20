@@ -4,12 +4,16 @@ The website for Typegrid: a 12-column grid system without the bells and whistles
 released in 2013 and featured on
 [Best of Behance](https://www.behance.net/gallery/9386529/Typegrid) on September 13, 2013.
 
-The page is a portfolio archive, designed in a minimal Swiss style: one typeface, three
-weights and one text colour, all set on the grid the page documents. There are no borders,
-boxes or filled buttons; structure comes from the columns, whitespace and type size, and red
-is the only accent. It opens with
-the 2013 poster (large type under translucent red bars that fade out toward the top and
-bottom), followed by five numbered sections: Get started, Playground, Ranges, Documentation
+The page is a portfolio archive, designed in a minimal Swiss style and set on the grid it
+documents. It follows a few strict rules:
+
+- Three type sizes only: display (the poster), headline, and text. Hierarchy comes from weight
+  and from position on the grid.
+- Two weights, regular and semibold, and one text colour. Red is the only accent.
+- No borders, boxes or filled buttons. Links and buttons are plain text on the column edge.
+
+It opens with the 2013 poster (large type under translucent red bars that fade out toward the
+top and bottom), followed by five sections: Get started, Playground, Ranges, Documentation
 and About.
 
 ## Stack
@@ -18,7 +22,7 @@ and About.
 - `public/typegrid.css` is the grid itself: CSS Grid driven by four custom properties
   (`--column-width`, `--columns`, `--gutter-width`, `--column-width-widescreen`). The site links
   this exact file, and the Download links serve it.
-- Inter (variable) for text, in weights 400, 500 and 600 only, and JetBrains Mono for code.
+- Inter (variable) for text, in weights 400 and 600 only, and JetBrains Mono for code.
   Both are self-hosted through Fontsource.
 - The logo is an inline SVG drawn on an 11 × 11 unit grid (`public/favicon.svg`).
 

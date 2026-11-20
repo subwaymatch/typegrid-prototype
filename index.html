@@ -39,8 +39,14 @@
             <a href="#about">About</a>
           </nav>
           <div class="site-header__actions col-3 tablet-3 mobile-7">
-            <button class="toggle" type="button" data-action="overlay" aria-pressed="false">
-              Grid<kbd class="hide-tablet hide-mobile">G</kbd>
+            <button
+              class="toggle"
+              type="button"
+              data-action="overlay"
+              aria-pressed="false"
+              title="Show the grid (G)"
+            >
+              Grid
             </button>
             <a href="./typegrid.css" download="typegrid.css">Download&nbsp;↓</a>
           </div>
@@ -81,10 +87,12 @@
                 <dd>2013</dd>
               </div>
             </dl>
-            <p class="hero__lead col-6 tablet-8">
-              <strong>Set up your grid within minutes.</strong>
-              Agile grid system for designers &amp; developers. Easy setup, update on the fly.
-            </p>
+            <div class="col-6 tablet-8">
+              <p class="headline">Set up your grid within minutes.</p>
+              <p class="hero__text">
+                Agile grid system for designers &amp; developers. Easy setup, update on the fly.
+              </p>
+            </div>
             <p class="hero__actions col-3 tablet-12">
               <a href="#documentation">Documentation <span aria-hidden="true">→</span></a>
               <a href="./typegrid.css" download="typegrid.css">Download (Beta) <span aria-hidden="true">↓</span></a>
@@ -96,13 +104,9 @@
       <!-- 01 Start -->
       <section class="section" id="start">
         <div class="container">
-          <div class="row section__head">
-            <p class="section__label col-3">Get started</p>
-            <h2 class="section__title col-9">Ready, set, go.</h2>
-          </div>
-
           <div class="row step">
-            <p class="step__name col-3 from-4">Ready</p>
+            <h2 class="section__label col-3">Get started</h2>
+            <p class="headline col-3">Ready</p>
             <div class="step__body col-6">
               <h3>Include files</h3>
               <p>
@@ -111,16 +115,18 @@
               </p>
               <div class="code" data-lang="html">
                 <pre><code>&lt;!-- typegrid.css --&gt;
-&lt;link rel="stylesheet" href="css/typegrid.css"&gt;
+&lt;link rel="stylesheet"
+      href="css/typegrid.css"&gt;
 
 &lt;!-- your styles --&gt;
-&lt;link rel="stylesheet" href="css/site.css"&gt;</code></pre>
+&lt;link rel="stylesheet"
+      href="css/site.css"&gt;</code></pre>
               </div>
             </div>
           </div>
 
           <div class="row step">
-            <p class="step__name col-3 from-4">Set</p>
+            <p class="headline col-3 from-4">Set</p>
             <div class="step__body col-6">
               <h3>Change options</h3>
               <p>There are only four custom properties you need to change.</p>
@@ -137,7 +143,7 @@
           </div>
 
           <div class="row step">
-            <p class="step__name col-3 from-4">Go</p>
+            <p class="headline col-3 from-4">Go</p>
             <div class="step__body col-6">
               <h3>Start coding</h3>
               <p>
@@ -154,9 +160,9 @@
       <section class="section" id="playground">
         <div class="container">
           <div class="row section__head">
-            <p class="section__label col-3">Playground</p>
+            <h2 class="section__label col-3">Playground</h2>
             <div class="col-9">
-              <h2 class="section__title">Update on the fly.</h2>
+              <p class="headline">Update on the fly.</p>
               <p class="section__lead">
                 Four numbers describe the whole grid. Drag them and watch the columns, the container and the
                 code follow.
@@ -167,7 +173,7 @@
           <div class="row gauge" data-preview="desktop">
             <div class="gauge__read col-3 from-4 tablet-4">
               <p class="gauge__label">Desktop</p>
-              <p class="gauge__figure"><span data-out="desktop-width">960</span><small>px</small></p>
+              <p class="gauge__figure"><span class="headline" data-out="desktop-width">960</span> px</p>
               <p class="gauge__math" data-out="desktop-math">12 × (40 + 40)</p>
             </div>
             <div class="gauge__track col-6 tablet-8">
@@ -178,7 +184,7 @@
           <div class="row gauge" data-preview="widescreen">
             <div class="gauge__read col-3 from-4 tablet-4">
               <p class="gauge__label">Widescreen</p>
-              <p class="gauge__figure"><span data-out="widescreen-width">1200</span><small>px</small></p>
+              <p class="gauge__figure"><span class="headline" data-out="widescreen-width">1200</span> px</p>
               <p class="gauge__math" data-out="widescreen-math">12 × (60 + 40)</p>
             </div>
             <div class="gauge__track col-6 tablet-8">
@@ -230,9 +236,9 @@
       <section class="section" id="ranges">
         <div class="container">
           <div class="row section__head">
-            <p class="section__label col-3">Ranges</p>
+            <h2 class="section__label col-3">Ranges</h2>
             <div class="col-9">
-              <h2 class="section__title">One markup, four ranges.</h2>
+              <p class="headline">One markup, four ranges.</p>
               <p class="section__lead">
                 The grid is fluid on small screens and locks to your numbers when there is room for them.
               </p>
@@ -305,23 +311,21 @@
       <!-- 04 Documentation -->
       <section class="section" id="documentation">
         <div class="container">
-          <div class="row section__head">
-            <p class="section__label col-3">Documentation</p>
-            <h2 class="section__title col-9">Documentation.</h2>
-          </div>
-
           <div class="row docs">
-            <nav class="docs__nav col-3" aria-label="Documentation">
-              <a href="#doc-overview" data-doc="overview" class="is-active">Overview</a>
-              <a href="#doc-basic" data-doc="basic">Basic Configuration</a>
-              <a href="#doc-advanced" data-doc="advanced">Advanced Configuration</a>
-              <a href="#doc-mobile" data-doc="mobile">Mobile</a>
-              <a href="#doc-markup" data-doc="markup">Markup</a>
-            </nav>
+            <div class="col-3">
+              <h2 class="section__label">Documentation</h2>
+              <nav class="docs__nav" aria-label="Documentation">
+                <a href="#doc-overview" data-doc="overview" class="is-active">Overview</a>
+                <a href="#doc-basic" data-doc="basic">Basic Configuration</a>
+                <a href="#doc-advanced" data-doc="advanced">Advanced Configuration</a>
+                <a href="#doc-mobile" data-doc="mobile">Mobile</a>
+                <a href="#doc-markup" data-doc="markup">Markup</a>
+              </nav>
+            </div>
 
             <div class="docs__panes col-9">
               <article class="doc is-active" id="doc-overview" data-doc-pane="overview">
-                <h3 class="doc__title">Overview</h3>
+                <h3 class="headline doc__title">Overview</h3>
                 <h4>Benefits</h4>
                 <p>
                   Instead of generating a different grid system every time you design a new website, Typegrid
@@ -346,7 +350,7 @@
               </article>
 
               <article class="doc" id="doc-basic" data-doc-pane="basic">
-                <h3 class="doc__title">Basic Configuration</h3>
+                <h3 class="headline doc__title">Basic Configuration</h3>
                 <h4>The four properties</h4>
                 <p>
                   Everything is derived from four unitless numbers on <code>:root</code>. Values are in pixels.
@@ -392,14 +396,14 @@
               </article>
 
               <article class="doc" id="doc-advanced" data-doc-pane="advanced">
-                <h3 class="doc__title">Advanced Configuration</h3>
+                <h3 class="headline doc__title">Advanced Configuration</h3>
                 <h4>A different grid for one section</h4>
                 <p>
                   Custom properties cascade, so the configuration does not have to be global. Set them on any
                   element and the rows inside pick up the new grid.
                 </p>
                 <div class="code" data-lang="css">
-                  <pre><code>/* An 8-column grid with tighter gutters, only in the sidebar */
+                  <pre><code>/* Sidebar only */
 .sidebar {
   --columns: 8;
   --gutter-width: 20;
@@ -418,7 +422,7 @@
               </article>
 
               <article class="doc" id="doc-mobile" data-doc-pane="mobile">
-                <h3 class="doc__title">Mobile</h3>
+                <h3 class="headline doc__title">Mobile</h3>
                 <h4>Stack first</h4>
                 <p>
                   Below 1000px every column takes the full width, so content reads top to bottom without any
@@ -431,9 +435,9 @@
                 </p>
                 <div class="code" data-lang="html">
                   <pre><code>&lt;div class="row"&gt;
-  &lt;div class="col-3 tablet-6 mobile-6"&gt;Half on small screens&lt;/div&gt;
-  &lt;div class="col-3 tablet-6 mobile-6"&gt;Half on small screens&lt;/div&gt;
-  &lt;div class="col-6 hide-mobile"&gt;Not on phones&lt;/div&gt;
+  &lt;div class="col-3 mobile-6"&gt;Half&lt;/div&gt;
+  &lt;div class="col-3 mobile-6"&gt;Half&lt;/div&gt;
+  &lt;div class="col-6 hide-mobile"&gt;Hidden&lt;/div&gt;
 &lt;/div&gt;</code></pre>
                 </div>
                 <p>
@@ -443,7 +447,7 @@
               </article>
 
               <article class="doc" id="doc-markup" data-doc-pane="markup">
-                <h3 class="doc__title">Markup</h3>
+                <h3 class="headline doc__title">Markup</h3>
                 <h4>Container, row, column</h4>
                 <p>Three classes do all the work. Column numbers in a row should add up to 12.</p>
                 <div class="code" data-lang="html">
@@ -489,8 +493,8 @@
       <section class="section" id="about">
         <div class="container">
           <div class="row section__head">
-            <p class="section__label col-3">About</p>
-            <h2 class="section__title col-9">Every layout starts with a few ruled lines.</h2>
+            <h2 class="section__label col-3">About</h2>
+            <p class="headline col-9">Every layout starts with a few ruled lines.</p>
           </div>
 
           <div class="row about">
@@ -514,20 +518,18 @@
             </div>
           </div>
 
-          <div class="row">
-            <a
-              class="feature row col-9 from-4"
-              href="https://www.behance.net/gallery/9386529/Typegrid"
-              target="_blank"
-              rel="noopener"
-            >
-              <span class="feature__label col-3">Featured</span>
-              <span class="col-6">
-                <span class="feature__name">Best of Behance <span aria-hidden="true">↗</span></span>
-                <span class="feature__date">September 13, 2013</span>
-              </span>
-            </a>
-          </div>
+          <a
+            class="feature row"
+            href="https://www.behance.net/gallery/9386529/Typegrid"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="section__label col-3">Featured</span>
+            <span class="col-9">
+              <span class="headline">Best of Behance <span aria-hidden="true">↗</span></span>
+              <span class="feature__date">September 13, 2013</span>
+            </span>
+          </a>
         </div>
       </section>
     </main>
